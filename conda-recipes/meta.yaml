@@ -5,7 +5,7 @@ package:
     version: {{ version }}
 
 source:
-    git_url: https://github.com/dohlee/metheor
+    git_url: https://github.com/JianmeiZhong/metheor
 
 requirements:
     build:
@@ -21,4 +21,4 @@ requirements:
         - rust
 
 about:
-    home: https://github.com/dohlee/metheor
+    home: https://github.com/JianmeiZhong/metheor
