@@ -114,10 +114,23 @@ pub fn run(input: &str, output: &str, genome: &str) {
 
         let read_seq = str::from_utf8(&r.seq().as_bytes())
             .ok().expect("Error parsing read sequence.").to_string().to_uppercase();
-
-        let ref_seq = str::from_utf8(&my_ref_genome[&(tid as usize)][start - 2..end + 2])
+        
+        if start==0
+        {
+            let ref_seq0 = str::from_utf8(&my_ref_genome[&(tid as usize)][0..end + 2])
+            let ref_seq="AA".push(ref_seq0)
             .ok().expect("Error parsing reference genome.").to_string().to_uppercase();
-
+        }else if start==1
+        { 
+            let ref_seq0 = str::from_utf8(&my_ref_genome[&(tid as usize)][1..end + 2])
+            let ref_seq="A".push(ref_seq0)
+            .ok().expect("Error parsing reference genome.").to_string().to_uppercase();
+        } else
+        {
+            let ref_seq = str::from_utf8(&my_ref_genome[&(tid as usize)][start - 2..end + 2])
+            .ok().expect("Error parsing reference genome.").to_string().to_uppercase();
+        }
+        
         let mut tmp_read_seq: Vec<char> = Vec::new();
         let mut tmp_ref_seq: Vec<char> = Vec::new();
 
